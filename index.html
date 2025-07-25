@@ -358,8 +358,12 @@
         El primero es un programa que a partir de una imagen y un promps del usuario pidiento "pick X" el programa busca el X en la imagen y la encuadra con un caudrado rojo señalando lo que buscaba el usuario.
         Es un programa que lo he hecho en python con ayuda de ia sobretodo para entender todo de las librerias y aun asi tampoco acabo de entenderlo del todo.
         <br/>
+        <div style="display: flex; justify-content: center;">
+          <img id="challengeImg" src="img/output.jpg" alt="Output del proyecto Challenge" style="max-width: 430px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: zoom-in;">
+        </div>
+        <br/><br/>
         El segundo mini proyecto es un programa que detecta el codigo de barras de una imagen y además de tener que detectar la posicion tiene que ser capaz de substraer los numeros o letras del codigo.
-        
+
       </p>
 
       <h3><u>Proyecto 2 actualidad</u></h3>
@@ -420,6 +424,11 @@
   <!-- Botón scroll top -->
   <button id="scrollTopBtn" title="Volver arriba">↑</button>
 
+  <!-- Modal para imagen ampliada -->
+  <div id="imgModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+    <img id="modalImg" src="" alt="Imagen ampliada" style="max-width:90vw; max-height:90vh; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,0.5);">
+  </div>
+
   <!-- Scripts -->
   <script>
     // Fade-in animation on scroll
@@ -445,6 +454,42 @@
     // Forzar scroll arriba al cargar la página
     window.addEventListener('load', () => {
       window.scrollTo(0, 0);
+    });
+
+    // Mostrar imagen en modal
+    document.querySelectorAll('.project-card img').forEach(img => {
+      img.addEventListener('click', () => {
+        document.getElementById('modalImg').src = img.src;
+        document.getElementById('imgModal').style.display = 'flex';
+      });
+    });
+
+    // Cerrar modal al hacer clic en la imagen
+    document.getElementById('imgModal').addEventListener('click', () => {
+      document.getElementById('imgModal').style.display = 'none';
+    });
+
+    // Modal imagen ampliada
+    const challengeImg = document.getElementById('challengeImg');
+    const imgModal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('modalImg');
+
+    challengeImg.addEventListener('click', () => {
+      modalImg.src = challengeImg.src;
+      imgModal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+
+    imgModal.addEventListener('click', () => {
+      imgModal.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && imgModal.style.display === 'flex') {
+        imgModal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
     });
   </script>
 
