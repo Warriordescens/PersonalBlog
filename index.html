@@ -20,7 +20,7 @@
     }
 
     header {
-      background-color: #2b2d42;
+      background: linear-gradient(135deg, #6fb2d6, #234b83);
       color: white;
       padding: 3rem 1rem 2rem;
       text-align: center;
@@ -294,34 +294,34 @@
     <section id="proyectos" class="fade-in-section">
       <h2 style="text-align: center;">Proyectos</h2>
       <div class="projects-container">
-        <a href="proyectos/proyecto1.html" class="project-card">
+        <a href="proyecto1.html" class="project-card">
           <img src="img/rollaball.png" alt="Rollaball">
           <h3>Rollaball</h3>
           <p>Juego de recoger puntos antes de ser eliminado.
             <br>Desarrollado en Unity con C#.
           </p>
         </a>
-        <a href="proyectos/proyecto2.html" class="project-card">
+        <a href="proyectoChallenge.html" class="project-card">
           <img src="img/proyecto2.jpg" alt="Proyecto 2">
-          <h3>Proyecto 2</h3>
-          <p>Pequeño resumen del segundo proyecto destacado.</p>
+          <h3>Proyecto Challenge</h3>
+          <p>Este "Proyecto Challenge" son unos 3 mini proyectos que me ha propuesto una empresa para apreciar cual es mi nivel actual de programación.</p>
         </a>
-        <a href="proyectos/proyecto3.html" class="project-card">
+        <a href="proyecto3.html" class="project-card">
           <img src="img/proyecto3.jpg" alt="Proyecto 3">
           <h3>Proyecto 3</h3>
           <p>Pequeño resumen del tercer proyecto destacado.</p>
         </a>
-        <a href="proyectos/proyecto4.html" class="project-card">
+        <a href="proyecto4.html" class="project-card">
           <img src="img/proyecto4.jpg" alt="Proyecto 4">
           <h3>Proyecto 4</h3>
           <p>Pequeño resumen del cuarto proyecto destacado.</p>
         </a>
-        <a href="proyectos/proyecto5.html" class="project-card">
+        <a href="proyecto5.html" class="project-card">
           <img src="img/proyecto5.jpg" alt="Proyecto 5">
           <h3>Proyecto 5</h3>
           <p>Pequeño resumen del segundo proyecto destacado.</p>
         </a>
-        <a href="proyectos/proyecto6.html" class="project-card">
+        <a href="proyecto6.html" class="project-card">
           <img src="img/proyecto6.jpg" alt="Proyecto 6">
           <h3>Proyecto 6</h3>
           <p>Pequeño resumen del segundo proyecto destacado.</p>
@@ -352,43 +352,6 @@
         Entonces vi que tienen cursos en el propio Unity y me puse a practicar desde 0 y este es el primer proyecto que he hecho hasta la fecha.</p>
       <h4>- Enlace/s a los cursos:</h4>
       <a href="https://learn.unity.com/">https://learn.unity.com/</a><br/><br/>
-
-      <h3><u>Proyecto Challenge</u></h3>
-      <p style="text-align: justify;">Este "Proyecto Challenge" son unos 3 mini proyectos que me ha propuesto una empresa para apreciar cual es mi nivel actual de programación.<br/><br/>
-        El <strong>primero</strong> es un programa que a partir de una imagen y un promps del usuario pidiento "pick X" el programa busca el X en la imagen y la encuadra con un caudrado rojo señalando lo que buscaba el usuario.
-        Es un programa que lo he hecho en python con ayuda de ia sobretodo para entender todo de las librerias y aun asi tampoco acabo de entenderlo del todo.
-        <br/>
-
-        <div style="display: flex; justify-content: center;">
-          <img id="challengeImg" src="img/output.jpg" alt="Output del proyecto Challenge mini1" style="max-width: 430px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: zoom-in;">
-        </div>
-
-        <br/><br/>
-        El <strong>segundo</strong> mini proyecto es un programa que detecta el codigo de barras de una imagen y además de tener que detectar la posicion tiene 
-        que ser capaz de recoger los numeros o letras del codigo.He logrado substraer algunos codigos de barras de las imagenes, 
-        pero no de todas, ya que no he logrado que el programa se adapte a todas las imagenes.
-        <br/><br/>
-
-        <div style="display: flex; justify-content: center;">
-          <img id="challengeImg" src="img/barcode_detection.jpg" alt="Output del proyecto Challenge mini2" style="max-width: 320px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: zoom-in;">
-        </div>
-
-        <br/><br/>
-        El <strong>tercer</strong> mini proyecto es un programa que debe detectar unos paquetes que hay en la imagen y ademas de detectarlos 
-        debe ser capaz de detectar la superficie mas optima para agarrar el paquete y dibujar una flecha roja en sentido mas optimo para que 
-        un robot lo agarre. Es un programa que se usa en robots que cogen y ordenan paquetes.
-        <br/>
-
-        <div style="display: flex; justify-content: center;">
-          <img id="challengeImg" src="img/packages_detect.png" alt="Output del proyecto Challenge mini3" style="max-width: 360px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: zoom-in;">
-        </div>
-
-        <br/><br/><br/>
-        En definitiva, he logrado hacer dos mini-proyectos decentes y el ultimo se me ha complicado, pero lo importante es todo el aprendizaje que le he sacado,
-        y que python solo lo toqué un poco al inicio del curso de DAM y no habia hecho nada mas. El hecho de haber vuelto a adentrarme en el mundo de python me ha
-        gustado, además de que he visto muchas cosas sobre librerias e IAs que se usan ahora que me han parecido muy interesantes.
-
-      </p>
 
       <h3><u>Proyecto 2 actualidad</u></h3>
       <p style="text-align: justify;">Este es un proyecto que estoy desarrollando actualmente. 
@@ -448,10 +411,7 @@
   <!-- Botón scroll top -->
   <button id="scrollTopBtn" title="Volver arriba">↑</button>
 
-  <!-- Modal para imagen ampliada -->
-  <div id="imgModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
-    <img id="modalImg" src="" alt="Imagen ampliada" style="max-width:90vw; max-height:90vh; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,0.5);">
-  </div>
+  
 
   <!-- Scripts -->
   <script>
@@ -491,29 +451,6 @@
     // Cerrar modal al hacer clic en la imagen
     document.getElementById('imgModal').addEventListener('click', () => {
       document.getElementById('imgModal').style.display = 'none';
-    });
-
-    // Modal imagen ampliada
-    const challengeImg = document.getElementById('challengeImg');
-    const imgModal = document.getElementById('imgModal');
-    const modalImg = document.getElementById('modalImg');
-
-    challengeImg.addEventListener('click', () => {
-      modalImg.src = challengeImg.src;
-      imgModal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    });
-
-    imgModal.addEventListener('click', () => {
-      imgModal.style.display = 'none';
-      document.body.style.overflow = '';
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && imgModal.style.display === 'flex') {
-        imgModal.style.display = 'none';
-        document.body.style.overflow = '';
-      }
     });
   </script>
 

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyecto Challenge</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    @keyframes colorCycle {
+      0% {
+        color: #ffffff;
+      }
+
+      25% {
+        color: #fcbf49;
+      }
+
+      50% {
+        color: #80ed99;
+      }
+
+      75% {
+        color: #a29bfe;
+      }
+
+      100% {
+        color: #ffffff;
+      }
+    }
+
+    .header-sub {
+      background: linear-gradient(135deg, #98c1d9, #3d5a80);
+      padding: 2.5rem 2rem;
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      color: #f0f0f0;
+      border-bottom: 4px solid #293241;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-title-wrapper {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .header-sub h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 600;
+      animation: colorCycle 6s infinite;
+    }
+
+    .content {
+      max-width: 1200px;
+      margin: 2rem auto;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    .img-wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 1.5rem 0;
+    }
+
+    img.project-img {
+      max-width: 70%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      cursor: zoom-in;
+      transition: transform 0.4s ease, box-shadow 0.3s ease;
+    }
+
+    img.project-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Modal para imagen ampliada */
+    #imgModal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    #modalImg {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Botó flotant */
+    .floating-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #e0fbfc;
+      color: #293241;
+      padding: 0.75rem 1.25rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s, transform 0.3s;
+      z-index: 10000;
+    }
+
+    .floating-button:hover {
+      background-color: #c2e1ec;
+      transform: scale(1.05);
+    }
+
+    /* Per evitar que el header tingui també un botó duplicat */
+    .header-sub a {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header-sub">
+    <div class="header-title-wrapper">
+      <h1>Proyecto Challenge</h1>
+    </div>
+    <a href="index.html">Volver al inicio</a>
+  </header>
+
+  <div class="content">
+    <p>
+      El <strong>primero</strong> es un programa que a partir de una imagen y un promps del usuario pidiento "pick X" el programa busca el X en la imagen y la encuadra con un caudrado rojo señalando lo que buscaba el usuario.
+      Es un programa que lo he hecho en python con ayuda de ia sobretodo para entender todo de las librerias y aun asi tampoco acabo de entenderlo del todo.
+    </p>
+    <div class="img-wrapper">
+      <img class="project-img" src="img/findObject.jpg" alt="Output del proyecto Challenge mini1">
+    </div>
+
+    <p>
+      El <strong>segundo</strong> mini proyecto es un programa que detecta el codigo de barras de una imagen y además de tener que detectar la posicion tiene 
+      que ser capaz de recoger los numeros o letras del codigo.He logrado substraer algunos codigos de barras de las imagenes, 
+      pero no de todas, ya que no he logrado que el programa se adapte a todas las imagenes.
+    </p>
+    <div class="img-wrapper">
+      <img class="project-img" src="img/barcode_detection.jpg" alt="Output del proyecto Challenge mini2">
+    </div>
+
+    <p>
+      El <strong>tercer</strong> mini proyecto es un programa que debe detectar unos paquetes que hay en la imagen y ademas de detectarlos 
+      debe ser capaz de detectar la superficie mas optima para agarrar el paquete y dibujar una flecha roja en sentido mas optimo para que 
+      un robot lo agarre. Es un programa que se usa en robots que cogen y ordenan paquetes.
+    </p>
+    <div class="img-wrapper">
+      <img class="project-img" src="img/packages_detect.png" alt="Output del proyecto Challenge mini3">
+    </div>
+
+    <p>
+      En definitiva, he logrado hacer dos mini-proyectos decentes y el ultimo se me ha complicado, pero lo importante es todo el aprendizaje que le he sacado,
+      y que python solo lo toqué un poco al inicio del curso de DAM y no habia hecho nada mas. El hecho de haber vuelto a adentrarme en el mundo de python me ha
+      gustado, además de que he visto muchas cosas sobre librerias e IAs que me han parecido muy interesantes.
+    </p>
+  </div>
+
+  <!-- Botó flotant -->
+  <a href="index.html" class="floating-button">🔙 Volver al inicio</a>
+
+  <!-- Modal para imagen ampliada -->
+  <div id="imgModal">
+    <img id="modalImg" src="" alt="Imagen ampliada">
+  </div>
+
+  <script>
+    const imgs = document.querySelectorAll('.project-img');
+    const imgModal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('modalImg');
+
+    imgs.forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        imgModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    imgModal.addEventListener('click', () => {
+      imgModal.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && imgModal.style.display === 'flex') {
+        imgModal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+
+</body>
+</html>
