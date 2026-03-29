@@ -5,254 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alex Hernández - Blog y Proyectos    (IN PROGRESS)</title>
-  <style>
-    * {
-      scroll-behavior: smooth;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
-      color: #333;
-    }
-
-    header {
-      background: linear-gradient(135deg, #6fb2d6, #234b83);
-      color: white;
-      padding: 3rem 1rem 2rem;
-      text-align: center;
-      position: relative;
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      animation: colorCycle 6s infinite;
-    }
-
-    @keyframes colorCycle {
-      0% {
-        color: #ffffff;
-      }
-
-      25% {
-        color: #fcbf49;
-      }
-
-      50% {
-        color: #80ed99;
-      }
-
-      75% {
-        color: #a29bfe;
-      }
-
-      100% {
-        color: #ffffff;
-      }
-    }
-
-    #subtitulo {
-      display: inline-block;
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-      color: white;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid white;
-      width: 0;
-      animation: typing 4s steps(83, end) forwards, blink-caret 0.75s step-end infinite;
-      animation-delay: 0s, 4s;  /* blink-caret empieza justo después de typing */
-      animation-fill-mode: forwards, none;
-    }
-
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-
-      to {
-        width: 63ch;  /* ancho igual a número de caracteres para que se vea el 'typing' al final del texto */
-      }
-    }
-
-    @keyframes blink-caret {
-      0%, 100% {
-        border-color: white;
-      } 50% {
-        border-color: transparent;
-      }
-    }
-
-    nav {
-      background-color: #8d99ae;
-      padding: 1rem;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-    }
-
-    main section {
-      max-width: 900px;
-      margin: 4rem auto;
-      padding: 2rem;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      margin-bottom: 2rem;
-      scroll-margin-top: 60px;
-    }
-
-    h2 {
-      color: #2b2d42;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #2b2d42;
-      color: white;
-    }
-
-    /* Contacto botones */
-    #contacto a {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.6rem 1rem;
-      border-radius: 8px;
-      color: white;
-      text-decoration: none;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-    }
-
-    #contacto a[href^="mailto"] {
-      background-color: #e63946;
-    }
-
-    #contacto a[href*="linkedin.com"] {
-      background-color: #0077b5;
-    }
-
-    #contacto a[href*="github.com"] {
-      background-color: #333;
-    }
-
-    #contacto a[href^="mailto"]:hover {
-      background-color: #c62828;
-      box-shadow: 0 4px 12px rgba(198, 40, 40, 0.6);
-      transform: scale(1.05);
-    }
-
-    #contacto a[href*="linkedin.com"]:hover {
-      background-color: #005582;
-      box-shadow: 0 4px 12px rgba(0, 85, 130, 0.6);
-      transform: scale(1.05);
-    }
-
-    #contacto a[href*="github.com"]:hover {
-      background-color: #1a1a1a;
-      box-shadow: 0 4px 12px rgba(26, 26, 26, 0.6);
-      transform: scale(1.05);
-    }
-
-    .fade-in-section {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-
-    .fade-in-section.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    #scrollTopBtn {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: #2b2d42;
-      color: white;
-      border: none;
-      padding: 10px 14px;
-      font-size: 20px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      z-index: 999;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    }
-
-    #scrollTopBtn:hover {
-      background-color: #1e1f32;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      #subtitulo {
-        font-size: 1rem;
-      }
-    }
-
-    /*Project cards*/
-
-    .projects-container {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 1rem;
-      padding: 1rem 0;
-    }
-
-    .project-card {
-      flex: 0 0 auto;
-      scroll-snap-align: start;
-      width: 250px;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .project-card img {
-      width: 100%;
-      height: 150px;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      object-fit: cover;
-    }
-
-    .project-card h3 {
-      margin: 0.5rem 0 0;
-    }
-
-    .project-card p {
-      padding: 0 0.5rem 1rem;
-      font-size: 0.9rem;
-      color: #666;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
@@ -265,7 +18,7 @@
   <nav>
     <a href="#sobre-mi">Sobre mí</a>
     <a href="#proyectos">Proyectos</a>
-    <a href="#recursos">Recursos</a>
+    <a href="blogs.html">Blog</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
@@ -302,7 +55,7 @@
           </p>
         </a>
         <a href="proyectoChallenge.html" class="project-card">
-          <img src="img/proyecto2.jpg" alt="Proyecto 2">
+          <img src="img/findObject.jpg" alt="Proyecto 2">
           <h3>Proyecto Challenge</h3>
           <p>Este "Proyecto Challenge" son unos 3 mini proyectos que me ha propuesto una empresa para apreciar cual es mi nivel actual de programación.</p>
         </a>
@@ -330,34 +83,11 @@
       </div>
     </section>
 
-    <!-- RECURSOS / COSAS NUEVAS -->
-    <section id="recursos" class="fade-in-section">
-      <h2 style="text-align: center;">Recursos y aprendizajes</h2>
-      <h3><u>Coding in Java 2024/2025</u></h3>
-      <p style="text-align: justify;">Este 2025 ha sido el año en que he aprendido a usar Java. 
-        Estoy cursando un Grado Superior de Desarrollo de Aplicaciones Multiplataforma y aprendemos Java, un lenguaje que, la verdad, 
-        no veo que se mencione mucho, pero me parece muy bueno para iniciarse en la programación.
-
-        Al inicio usamos algo de Python, pero bueno, Python la verdad es que me gusta, aunque le veo más lógica a la programación en Java.
-        <br/><br/>
-        Programar en Java ha despertado mucho más mi interés por la programación y por aprender a programar de verdad, 
-        porque hasta la fecha no había hecho más que un par de "Hello World" y alguna operación.
-        <br/>
-        El hecho de que lo puedo llevar mucho más allá me parece fascinante.
-        Por eso, mi siguiente paso será programar en C++, no tanto por el lenguaje, que está interesante, sino porque, 
-        como se ve en el Proyecto 2, quiero adentrarme en el mundo de Unreal Engine y los juegos 3D.
-      </p>
-      <h3><u>Rollaball 04/07/2025</u></h3>
-      <p style="text-align: justify;">Este programa ha sido un mini proyecto que me pareció interesante para iniciarme en el C# y en Unity. 
-        Entonces vi que tienen cursos en el propio Unity y me puse a practicar desde 0 y este es el primer proyecto que he hecho hasta la fecha.</p>
-      <h4>- Enlace/s a los cursos:</h4>
-      <a href="https://learn.unity.com/">https://learn.unity.com/</a><br/><br/>
-
-      <h3><u>Proyecto 2 actualidad</u></h3>
-      <p style="text-align: justify;">Este es un proyecto que estoy desarrollando actualmente. 
-        Aún no tengo mucho que contar, pero quiero empezar a aprender realmente c++ y agilizar el uso de Unreal Engine.
-        <br><br><strong>Cuando tenga algo más avanzado lo subiré aquí.</strong></p>
-      </p>
+    <!-- BLOGS / VLOGS -->
+    <section id="blogs" class="fade-in-section" style="text-align: center; padding-bottom: 3rem;">
+      <h2>Blog de Desarrollo</h2>
+      <p style="font-size: 1.1rem; color: #555; max-width: 600px; margin: 0 auto;">¡Haz clic abajo para ver mis blogs y artículos sobre lo que estoy aprendiendo y descubriendo! Allí verás mi avance con React, PHP, Unity y mi afición a la escalada.</p>
+      <a href="blogs.html" style="display: inline-block; margin-top: 1.5rem; padding: 0.8rem 1.8rem; background-color: #2b2d42; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background-color 0.3s, transform 0.2s;">Ir al Blog 📚</a>
     </section>
 
     <!-- CONTACTO -->
@@ -413,46 +143,13 @@
 
   
 
+  <!-- Modal para imagen ampliada -->
+  <div id="imgModal">
+    <img id="modalImg" src="" alt="Imagen ampliada">
+  </div>
+
   <!-- Scripts -->
-  <script>
-    // Fade-in animation on scroll
-    const fadeIns = document.querySelectorAll('.fade-in-section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-    fadeIns.forEach(section => observer.observe(section));
-
-    // Scroll-to-top button
-    const scrollBtn = document.getElementById("scrollTopBtn");
-    window.addEventListener("scroll", () => {
-      scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
-    });
-    scrollBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-
-    // Forzar scroll arriba al cargar la página
-    window.addEventListener('load', () => {
-      window.scrollTo(0, 0);
-    });
-
-    // Mostrar imagen en modal
-    document.querySelectorAll('.project-card img').forEach(img => {
-      img.addEventListener('click', () => {
-        document.getElementById('modalImg').src = img.src;
-        document.getElementById('imgModal').style.display = 'flex';
-      });
-    });
-
-    // Cerrar modal al hacer clic en la imagen
-    document.getElementById('imgModal').addEventListener('click', () => {
-      document.getElementById('imgModal').style.display = 'none';
-    });
-  </script>
+  <script src="js/main.js"></script>
 
 </body>
 
